@@ -4,7 +4,7 @@
  * @Email:  andreeray@live.com
  * @Filename: index.js
  * @Last modified by:   andreeray
- * @Last modified time: 2018-01-09T12:26:29+01:00
+ * @Last modified time: 2018-01-09T13:06:16+01:00
  */
 import Vue from 'vue'
 
@@ -21,7 +21,7 @@ export default new Vuex.Store({
         eventFormPosX: 0,
         eventFormPosY: 0,
         eventFormActive: false,
-        eventFormDate: null,
+        eventFormDate: moment(),
         events: [
             { description: 'Random Event 1', date: moment('2018-01-01', 'YYYY-MM-DD')},
             { description: 'Random Event 2', date: moment('2018-01-13', 'YYYY-MM-DD')},

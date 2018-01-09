@@ -4,7 +4,7 @@
 @Email:  andreeray@live.com
 @Filename: CalenderDay.vue
 @Last modified by:   andreeray
-@Last modified time: 2018-01-09T12:24:05+01:00
+@Last modified time: 2018-01-09T13:10:57+01:00
 -->
 <template>
     <div :class="classObject" @click="onClick">
@@ -24,10 +24,13 @@ export default {
         },
         classObject() {
             let today = this.day.isSame(this.$moment(), 'day')
+            let eventFormDate = this.$store.state.eventFormDate
+            let eventFormActive = this.$store.state.eventFormActive
             return {
                 day: true,
                 today,
-                past: this.day.isSameOrBefore(this.$moment(), 'day') && !today
+                past: this.day.isSameOrBefore(this.$moment(), 'day') && !today,
+                active: eventFormDate.isSame(this.day, 'day') && eventFormActive
             }
         }
     },

@@ -4,7 +4,7 @@
 @Email:  andreeray@live.com
 @Filename: currentMonth.vue
 @Last modified by:   andreeray
-@Last modified time: 2018-01-08T17:42:06+01:00
+@Last modified time: 2018-01-09T13:05:08+01:00
 -->
 <template>
     <div class="">
@@ -29,6 +29,7 @@ export default {
             } else {
                 this.$store.commit('setCurrentMonth', this.month - 1)
             }
+            this.$store.commit('eventFormActive', false)
         },
         inc () {
             if (this.month === 12) {
@@ -37,6 +38,7 @@ export default {
             } else {
                 this.$store.commit('setCurrentMonth', this.month + 1)
             }
+            this.$store.commit('eventFormActive', false)
         }
     }
 }
